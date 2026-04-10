@@ -1,4 +1,4 @@
-# Advanced Live Weather Dashboard
+# Weather Dashboard
 
 A premium, React-based web application that provides real-time and 10-day forecasts for any city across the globe. Built meticulously using Vite, React 19, and the Open-Meteo REST API, this dashboard delivers highly responsive performance draped in a beautiful glassmorphism aesthetic.
 

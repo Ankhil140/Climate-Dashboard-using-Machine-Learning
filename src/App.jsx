@@ -145,7 +145,7 @@ function App() {
     <div className="dashboard-container">
       <header className="glass-panel" style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem'}}>
         <div>
-          <h1>Climate Dashboard</h1>
+          <h1>Weather Dashboard</h1>
           <p>Premium Real-Time Weather Application</p>
         </div>
         <div className="unit-toggle" style={{display: 'flex', background: 'rgba(0,0,0,0.3)', borderRadius: '8px', padding: '4px'}}>

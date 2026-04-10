@@ -1,22 +1,19 @@
-# Predicting Weather with Machine Learning
+# Global Climate Dashboard using Machine Learning
 
-This repository contains a comprehensive Jupyter Notebook that implements a machine learning model to predict global temperatures using historical climate data. It is a recreation of the "Predict Weather with Machine Learning" tutorial, optimized for learning and demonstration purposes.
+This repository contains a full-stack, premium web application that implements a machine learning model to predict global temperatures using historical climate data. Initially based on the "Predict Weather with Machine Learning" tutorial, it has been expanded into a live Interactive Dashboard deployed on Vercel.
 
 ## Project Overview
 
-The project demonstrates an end-to-end data science workflow:
-1. **Data Loading & Exploration**: Ingestion of `GlobalTemperatures.csv` and exploratory data analysis.
-2. **Data Wrangling**: Cleaning the dataset by dropping high cardinality columns, handling N/A values, parsing dates, and converting temperatures from Celsius to Fahrenheit.
-3. **Visualization**: Generating a correlation heatmap using Seaborn to identify relevant features.
-4. **Modeling**: Training a Random Forest Regressor to predict the `LandAndOceanAverageTemperature`.
-5. **Evaluation**: Evaluating the model against a baseline using Mean Absolute Error (MAE) and Mean Absolute Percentage Error (MAPE). 
+The project demonstrates an end-to-end data science and full-stack workflow:
+1. **Machine Learning**: An exploratory Jupyter Notebook (`predict_weather.ipynb`) that cleans the `GlobalTemperatures.csv` dataset and trains a Random Forest Regressor to predict the `LandAndOceanAverageTemperature`.
+2. **Serverless API**: A Python Flask backend (`/api`) that exposes live predictions and leverages `@vercel/python` for scalable deployment.
+3. **Live Dashboard**: A beautiful Vite/React frontend designed with premium Glassmorphism aesthetics that consumes both the ML predictions and live REST APIs (Open-Meteo) to provide real-time weather tracking.
 
 ## Tools & Libraries Used
 
-* **Python 3**
-* **Pandas & NumPy** for data manipulation
-* **Seaborn & Matplotlib** for data visualization
-* **Scikit-Learn** for machine learning (RandomForestRegressor, Pipelines, Train-Test Split)
+* **Frontend**: React 19, Vite, Recharts, Lucide-React, Vanilla Custom CSS
+* **Backend**: Python 3, Flask, Pandas, Scikit-Learn, Joblib
+* **APIs**: Open-Meteo (Free Geocoding & Live Weather)
 
 ## Model Performance
 
@@ -26,14 +23,23 @@ The project demonstrates an end-to-end data science workflow:
 
 The Random Forest Regressor significantly outperforms the baseline moving average model, achieving high accuracy in predicting terrestrial and oceanic temperatures.
 
-## Usage
+## Deployment (Vercel)
 
-To run the notebook locally, ensure you have Jupyter and the required dependencies installed:
+This repository is structured as a Vercel Monorepo. 
+To launch it online:
+1. Import this repository to your [Vercel](https://vercel.com/) dashboard.
+2. Vercel will automatically build the React frontend and deploy the `/api` directory as serverless backend functions.
 
+## Local Development
+
+To run the application locally:
 ```bash
-pip install pandas numpy seaborn matplotlib scikit-learn
-jupyter notebook predict_weather.ipynb
-```
+# Terminal 1: Frontend
+npm install
+npm run dev
 
-## Dataset
-The project expects `GlobalTemperatures.csv` in the root repository directory. This dataset consists of global average land and ocean temperature measurements dating back to 1750.
+# Terminal 2: Backend API
+cd api
+pip install -r requirements.txt
+python index.py
+```

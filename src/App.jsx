@@ -95,8 +95,8 @@ function App() {
   return (
     <div className="dashboard-container">
       <header className="glass-panel">
-        <h1>Global Climate Dashboard</h1>
-        <p>Premium Real-Time Weather Prediction using Machine Learning</p>
+        <h1>Global Climate Dashboard <span style={{fontSize: '1.2rem', fontWeight: 'normal', color: 'var(--text-secondary)'}}>using Machine Learning</span></h1>
+        <p>Premium Real-Time Weather Prediction & Live Data</p>
       </header>
 
       <div className="kpi-grid">
